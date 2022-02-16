@@ -11,9 +11,7 @@ public:
 	}
 
 	int add(calc,calc);
-	int mul(){
-		return in1*in2;
-	}
+	calc mul(calc);
 	int sub(){
 		return in1-in2;
 	}
@@ -36,10 +34,15 @@ public:
 int calc ::  add(calc c,calc c1){
 		return c.in1+c1.in1;
 	}
+calc calc :: mul(calc c){
+		calc temp;
+		temp.in1 = c.in1 * c.in2;
+		return (temp);
+	}
 int main(){
 	int x,y;
 	char choice;
-	calc obj1,obj2;
+	calc obj1,obj2,temp;
 	int out;
 	
 	cout << "Enter choice:";
@@ -59,7 +62,7 @@ int main(){
 	 	out= obj1.sub();
 	 	break;
  	case '*':
-	 	out= obj1.mul();
+	 	temp= obj1.mul(obj1);
 	 	break;
  	case '/':
 	 	out= obj1.div();
@@ -76,5 +79,6 @@ int main(){
 	
 	
 	cout << "ans is:" << out << endl;
+	cout << "ans is:" << temp.in1 << endl;
 	return 0;
 }
