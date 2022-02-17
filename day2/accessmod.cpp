@@ -68,13 +68,13 @@ int main(){
 	cout<<"protected var public fun:"<<ob.mul(1,2)<<endl;						//accessible both
 	
 
-	// cout<<"public var private fun:"<<ob.fun1(1,2)<<endl;						// not accessible
-	// cout<<"private var private fun:"<<ob.fun2(1,2)<<endl;					// not accessible
-	// cout<<"protected var private fun:"<<ob.fun3(1,2)<<endl;					// not accessible
+	// cout<<"public var private fun:"<<ob.fun1(1,2)<<endl;						// not accessible outside class directly
+	// cout<<"private var private fun:"<<ob.fun2(1,2)<<endl;					// not accessible outside class directly
+	// cout<<"protected var private fun:"<<ob.fun3(1,2)<<endl;					// not accessible outside class directly
 
-	// cout<<"public var protected fun:"<<ob.fun4(1,2)<<endl;					// not accessible
-	// cout<<"private var protected fun:"<<ob.fun5(1,2)<<endl;					// not accessible
-	// cout<<"protected var protected fun:"<<ob.fun6(1,2)<<endl;				// not accessible
+	// cout<<"public var protected fun:"<<ob.fun4(1,2)<<endl;					// not accessible outside class directly
+	// cout<<"private var protected fun:"<<ob.fun5(1,2)<<endl;					// not accessible outside class directly
+	// cout<<"protected var protected fun:"<<ob.fun6(1,2)<<endl;				// not accessible outside class directly
 
 
 
