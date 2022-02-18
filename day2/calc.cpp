@@ -11,13 +11,10 @@ public:
 	}
 
 	int add(calc,calc);
+	int sub(calc,calc);
+	int div(calc,calc);
 	calc mul(calc);
-	int sub(){
-		return in1-in2;
-	}
-	int div(){
-		return in1/in2;
-	}
+	calc avg(calc);
 	int fact(){
 		int fact=1;
 		for(int i=1;i<=in1;i++){
@@ -25,18 +22,26 @@ public:
 		}
 		return fact;
 	}
-	int avg(){
-		return (in1+in2)/2;
-	}
 	
 
 };
 int calc ::  add(calc c,calc c1){				//returning sum of object
 		return c.in1+c1.in1;
 	}
+int calc ::  sub(calc c,calc c1){				//returning sub of object
+		return c.in1-c1.in1;
+	}
+int calc ::  div(calc c,calc c1){				//returning div of object
+		return c.in1/c1.in1;
+	}
 calc calc :: mul(calc c){
 		calc temp;
-		temp.in1 = c.in1 * c.in2;			//
+		temp.in1 = c.in1 * c.in2;			//mul
+		return (temp);
+	}
+calc calc :: avg(calc c){
+		calc temp;
+		temp.in1 = (c.in1 + c.in2)/2;			//avg
 		return (temp);
 	}
 int main(){
@@ -59,16 +64,16 @@ int main(){
 	 	out= obj1.add(obj1,obj2);
 	 	break;
  	case '-':
-	 	out= obj1.sub();
+	 	out= obj1.sub(obj1,obj2);
 	 	break;
  	case '*':
 	 	temp= obj1.mul(obj1);
 	 	break;
  	case '/':
-	 	out= obj1.div();
+	 	out= obj1.div(obj1,obj2);
 	 	break;
  	case 'a':
-	 	out= obj1.avg();
+	 	temp= obj1.avg(obj1);
 	 	break;
  	case 'f':
 	 	out= obj1.fact();
@@ -77,8 +82,9 @@ int main(){
  	
 	}
 	
-	
+	if(choice == '+' || choice == '/' || choice == '-' || choice == 'f')
 	cout << "ans is:" << out << endl;
+	if(choice == 'a' || choice == '*')
 	cout << "ans is:" << temp.in1 << endl;
 	return 0;
 }
