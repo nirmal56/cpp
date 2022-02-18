@@ -9,18 +9,20 @@ class dated{
 	
 	public:
 	int d,m,y;
-	void setDate(){
+	dated setDate(){
+		dated temp;
 		time_t now = time(0);
 		tm *ltm = localtime(&now);
-		day = ltm->tm_mday ;
-		month = ltm->tm_mon ;
-		year = ltm->tm_year ;
+		temp.day = ltm->tm_mday ;
+		temp.month = ltm->tm_mon ;
+		temp.year = ltm->tm_year ;
+		return temp;
 	}
 	dated getDate(){
 		dated temp;
-		temp.d=day;
-		temp.m=month+1;
-		temp.y=year+1900;
+		temp.d=temp.day;
+		temp.m=temp.month+1;
+		temp.y=temp.year+1900;
 		return temp;
 	}
 	dated setDOB(int dd,int mm,int yy){
@@ -32,8 +34,9 @@ class dated{
 	}
 	dated findAge(dated dobj){
 		dated acc,temp,ans;
-		temp.setDate();
+		acc = temp.setDate();
 		acc = temp.getDate();
+		//cout<<acc.d<<" "<<acc.m<<" "<<acc.y<<endl;
 		ans.d = dobj.d - acc.d;
 		ans.m = dobj.m - acc.m;
 		ans.y = dobj.y - acc.y;
@@ -72,7 +75,7 @@ class timet{
 };
 
 int main(){
-//__________________________________time class___________________________________________________//
+//______________________________________________time class___________________________________________________//
 	timet t,temp1,temp2,obj;
 	t.setTime();
 	temp1 = t.getTime(); 
@@ -86,9 +89,9 @@ int main(){
 	
 	obj = t.sleepTime(temp1,temp2);
 	cout << "timeDIFF="<<obj.h<<" "<<obj.m<<" "<<obj.s<<endl;
-//___________________________________date class________________________________________________//
-	dated d,temp3,temp4,age;
-	d.setDate();
+//_______________________________________________date class__________________________________________________//
+	dated d,temp3,temp4,age,nodata;
+	nodata = d.setDate();
 	temp3 = d.getDate();
 	temp4 = d.setDOB(5,6,2001);
 	cout << "getdate="<<temp3.d<<" "<<temp3.m<<" "<<temp3.y<<endl;
@@ -99,3 +102,4 @@ int main(){
 
 	return 0;
 }
+ 

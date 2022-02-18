@@ -4,24 +4,38 @@
 using namespace std;
 
 class Dist {
-private:
-    int meter;
-    
-	friend int add(Dist);    		// friend function
 
     public:
+    
+    int meter;
+    
         Dist()  {
-        	meter=0;
+            meter=0;
         }
+    friend int add(Dist);           // friend function
+       
 };
 
-int add(Dist d) {
-    d.meter += 5;
-    return d.meter;
+class Dist2 {
+
+    public:
+    int m;
+        Dist2()  {
+            m=0;
+        }
+    friend int add(Dist2);           // friend function
+     
+};
+
+int add(Dist d,Dist2 d2) {
+    d.meter += 10;
+    d2.m += 20;
+    return d.meter+d2.m;
 }
 
 int main() {
     Dist D;
-    cout << "Distance: " << add(D)<<endl;
+    Dist2 D1;
+    cout << "Distance: " << add(D,D1)<<endl;
     return 0;
 }
