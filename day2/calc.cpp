@@ -31,12 +31,12 @@ public:
 	
 
 };
-int calc ::  add(calc c,calc c1){
+int calc ::  add(calc c,calc c1){				//returning sum of object
 		return c.in1+c1.in1;
 	}
 calc calc :: mul(calc c){
 		calc temp;
-		temp.in1 = c.in1 * c.in2;
+		temp.in1 = c.in1 * c.in2;			//
 		return (temp);
 	}
 int main(){
