@@ -29,17 +29,45 @@ public:
 		return ans;
 	}
 
+	complex operator - (complex obj){			
+		complex ans;
+		ans.real = real - obj.real;
+		ans.img = img - obj.img;
+		return ans;
+	}
+	complex operator * (complex obj){			
+		complex ans;
+		ans.real = real * obj.real;
+		ans.img = img * obj.img;
+		return ans;
+	}complex operator / (complex obj){			
+		complex ans;
+		ans.real = real / obj.real;
+		ans.img = img / obj.img;
+		return ans;
+	}
 };
 
 int main(){
-	complex c1(1,2),c2(1,2);
+	complex c1(2,2),c2(1,2);
 	complex c3;
 	c1.display();
 	c2.display();
 	c3.display();
 
-	cout<< "action starts here:";
-	c3=c1+c2;
+	cout<< "ADDITION:";
+	//below both are working to overload operator.
+	//c3=c1+c2;
+	c3 =c1.operator +(c2);
+	c3.display();
+	cout<< "SUBTRACTION:";
+	c3 =c1.operator -(c2);
+	c3.display();
+	cout<< "MULTIPLICATION:";
+	c3 =c1.operator *(c2);
+	c3.display();
+	cout<< "DIVISION";
+	c3 =c1.operator /(c2);
 	c3.display();
 
 	return 0;
