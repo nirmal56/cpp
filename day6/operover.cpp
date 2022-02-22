@@ -40,12 +40,14 @@ public:
 		ans.real = real * obj.real;
 		ans.img = img * obj.img;
 		return ans;
-	}complex operator / (complex obj){			
+	}
+	complex operator / (complex obj){			
 		complex ans;
 		ans.real = real / obj.real;
 		ans.img = img / obj.img;
 		return ans;
 	}
+	
 };
 
 int main(){
