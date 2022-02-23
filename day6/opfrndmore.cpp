@@ -100,7 +100,7 @@ bool operator > (complex ob1,complex ob2){
 
 
 int main(){
-	complex c1(2,2),c2(1,2);
+	complex c1(2,2),c2(2,2);
 	complex c3;
 	bool t;
 	c1.display();
