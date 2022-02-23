@@ -31,6 +31,7 @@ space space::operator -(){
 	temp.x=-x;
 	temp.y=-y;
 	temp.z=-z;
+	return temp;
 }
 space space::operator --(){
 	space temp;
@@ -70,22 +71,22 @@ int main(){
 
 	s1.display();
 
-	d=-s1;
-	s1.display();
+	// d=-s1;
+	// d.display();
 
 	d=--s1;
-	s1.display();
+	d.display();
 
 	d=++s1;
-	s1.display();
+	d.display();
 
 	d = s1++;
-	s1.display();
+	d.display();
 
-	d=s1++;
-	s1.display();
+	d=s1--;
+	d.display();
 
 	d= -s1;
-	s1.display();
+	d.display();
 	return 0;
 }

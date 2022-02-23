@@ -60,20 +60,27 @@ space space::operator ++(int){
 int main(){
 	space s1(5,4,3),d;
 	s1.display();
+
 	-s1;
 	s1.display();
+
 	--s1;
 	s1.display();
+
 	//++s1;
 	s1.display();
+
 	d = s1++;
 	cout<<"------------------------------";
-	cout<<"d";
+	cout<<"\nd";
 	d.display();
+
 	cout<<"s1";
 	s1.display();
+
 	s1++;
 	s1.display();
+
 	-s1;
 	s1.display();
 	return 0;
