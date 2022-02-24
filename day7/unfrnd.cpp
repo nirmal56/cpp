@@ -17,36 +17,38 @@ public:
 	void display(){
 		cout<<"====>x="<<x<<",y="<<y<<",z="<<z<<endl;
 	}
-	friend space operator -(space);
-	friend space operator --(space);
-	friend space operator ++(space);
+	friend space operator -(space &);
+	friend space operator --(space &);
+	// friend space operator ++(space &);
 	// friend space operator ++(int);
 	// friend  space operator --(int);
 
 };
 
- space operator -(space temp){
-	
+ space operator -(space & temp){
+	space t;
 	cout<<"\nnegate"<<endl;
-	temp.x=-temp.x;
-	temp.y=-temp.y;
-	temp.z=-temp.z;
-	return temp;
+	t.x=-temp.x;
+	t.y=-temp.y;
+	t.z=-temp.z;
+	return t;
 }
- space operator --(space temp){
+ space operator --(space & temp){	
+	space t;
 	cout<<"\npre decre";
-	temp.x=temp.--x;
-	temp.y=temp.--y;
-	temp.z=temp.--z;
-	return temp;
+	t.x=--temp.x;
+	t.y=--temp.y;
+	t.z=--temp.z;
+	return t;
 }
- space operator ++(space temp){
-	cout<<"\npre incre";
-	temp.x=temp.++x;
-	temp.y=temp.++y;
-	temp.z=temp.++z;
-	return temp;
-}
+//  space operator ++(space & temp){
+// 	space t;
+// 	cout<<"\npre incre";
+// 	t.x=++temp.x;
+// 	t.y=++temp.y;
+// 	t.z=++temp.z;
+// 	return t;
+// }
 //  space operator --(int){
 // 	space temp;
 // 	cout<<"\npost decre";
@@ -69,14 +71,17 @@ int main(){
 
 	s1.display();
 
-	d=-s1;
-	d.display();
+	s1=-s1;
+	// d.display();
+	s1.display();
 
-	d=--s1;
-	d.display();
+	s1=--s1;
+	// d.display();
+	s1.display();
 
-	d=++s1;
-	d.display();
+	// d=++s1;
+	// d.display();
+	// s1.display();
 
 	// d = s1++;
 	// s1.display();
