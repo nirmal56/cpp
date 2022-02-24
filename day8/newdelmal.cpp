@@ -27,6 +27,9 @@ int main(){
 	delete[] a2;
 	delete a3;
 	char *c = (char *) malloc(sizeof(char)*5);
+
+	A *d = (A *) malloc(sizeof(A)*5);
 	delete c;
+	delete d;
 	return 0;
 }
