@@ -21,7 +21,7 @@ public:
 	friend space operator --();
 	friend space operator ++();
 	friend space operator ++(int);
-	frie  space operator --(int);
+	friend  space operator --(int);
 
 };
 

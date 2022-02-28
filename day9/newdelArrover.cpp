@@ -1,4 +1,5 @@
 //overloading new[] and del[]
+//global overloading
 
 #include<iostream>
 #include<stdlib.h>

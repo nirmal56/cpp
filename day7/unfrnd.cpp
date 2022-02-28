@@ -19,15 +19,15 @@ public:
 	}
 	friend space operator -(space &);
 	friend space operator --(space &);
-	// friend space operator ++(space &);
-	// friend space operator ++(int);
-	// friend  space operator --(int);
+	friend space operator ++(space &);
+	friend space operator ++(space &,int);
+	friend space operator --(space &,int);
 
 };
 
  space operator -(space & temp){
 	space t;
-	cout<<"\nnegate"<<endl;
+	cout<<"\nnegate";
 	t.x=-temp.x;
 	t.y=-temp.y;
 	t.z=-temp.z;
@@ -41,55 +41,53 @@ public:
 	t.z=--temp.z;
 	return t;
 }
-//  space operator ++(space & temp){
-// 	space t;
-// 	cout<<"\npre incre";
-// 	t.x=++temp.x;
-// 	t.y=++temp.y;
-// 	t.z=++temp.z;
-// 	return t;
-// }
-//  space operator --(int){
-// 	space temp;
-// 	cout<<"\npost decre";
-// 	temp.x=x--;
-// 	temp.y=y--;
-// 	temp.z=z--;
-// 	return temp;
-// }
-//  space operator ++(int){
-// 	space temp;
-// 	cout<<"\npost incre";
-// 	temp.x=x++;
-// 	temp.y=y++;
-// 	temp.z=z++;
-// 	return temp;
-// }
+ space operator ++(space & temp){
+	space t;
+	cout<<"\npre incre";
+	t.x=++temp.x;
+	t.y=++temp.y;
+	t.z=++temp.z;
+	return t;
+}
+ space operator --(space & temp,int){
+	space t;
+	cout<<"\npost decre";
+	t.x=temp.x--;
+	t.y=temp.y--;
+	t.z=temp.z--;
+	return t;
+}
+ space operator ++(space & temp, int){
+	space t;
+	cout<<"\npost incre";
+	t.x=temp.x++;
+	t.y=temp.y++;
+	t.z=temp.z++;
+	return t;
+}
 
 int main(){
 	space s1(5,4,3),d;
 
 	s1.display();
 
-	s1=-s1;
-	// d.display();
-	s1.display();
+	d=-s1;
+	d.display();
 
-	s1=--s1;
-	// d.display();
-	s1.display();
+	d=--d;
+	d.display();
 
-	// d=++s1;
-	// d.display();
-	// s1.display();
+	d=++d;
+	d.display();
 
-	// d = s1++;
-	// s1.display();
 
-	// d=s1++;
-	// s1.display();
+	d= d++;
+	d.display();
 
-	// d= -s1;
-	// s1.display();
+	d=d--;
+	d.display();
+
+	d= -s1;
+	d.display();
 	return 0;
 }
