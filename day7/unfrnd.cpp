@@ -80,16 +80,18 @@ int main(){
 	d=++d;
 	d.display();
 
-
-	s1= d++;
+//as it is post increment.
+	s1=d++;
 	s1.display();
+	cout<<"----d----";
 	d.display();
 
 	s1=d--;
 	s1.display();
+	cout<<"----d----";
 	d.display();
 
-	d= -s1;
+	d= -d;
 	d.display();
 	return 0;
 }
