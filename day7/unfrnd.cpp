@@ -81,10 +81,12 @@ int main(){
 	d.display();
 
 
-	d= d++;
+	s1= d++;
+	s1.display();
 	d.display();
 
-	d=d--;
+	s1=d--;
+	s1.display();
 	d.display();
 
 	d= -s1;
