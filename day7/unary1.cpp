@@ -83,7 +83,7 @@ int main(){
 	d = s1++;
 	d.display();
 
-	d=s1--;
+	d= s1--;
 	d.display();
 
 	d= -s1;
