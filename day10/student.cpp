@@ -37,7 +37,7 @@ class result : public test,public student{
 public:
 	result(){}
 	int total=0;
-	int percent=0;
+	int percent;
 
 	void sum(){
 		for(int i=0;i<5;i++){
@@ -47,7 +47,7 @@ public:
 	}
 
 	void per(){
-		percent=(total/500)*100;
+		percent=(total*100)/100;
 		cout<<"percentage is:"<<percent<<endl;
 	}
 };
