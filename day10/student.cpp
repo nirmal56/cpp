@@ -47,7 +47,7 @@ public:
 	}
 
 	void per(){
-		percent=(total*100)/100;
+		percent=(total*100)/500;
 		cout<<"percentage is:"<<percent<<endl;
 	}
 };
