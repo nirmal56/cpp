@@ -73,9 +73,9 @@ public:
 };
 
 int main(){
-	person p;
-	p.weight(50);
-	p.height(10);
+	person p(40,50);
+	// p.weight(50);
+	// p.height(10);
 	p.display();
 
 	doctor d;
