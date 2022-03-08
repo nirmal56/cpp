@@ -7,6 +7,9 @@ public:
 	base(){
 		cout<<"base class"<<endl;
 	}
+	~base(){
+		cout<<"base destructer"<<endl;
+	}
 };
 
 class derived{
@@ -17,6 +20,9 @@ public:
 	}
 	derived(int y){
 		cout<<y<<endl;
+	}
+	~derived(){
+		cout<<"derived des"<<endl;
 	}
 };
 
