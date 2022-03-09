@@ -4,21 +4,26 @@ using namespace std;
 class demo{
     int i;
 public:
-
+    demo(){}
     demo(int x){
         i=x;
     }
     int getdata(){
+        cout<<i<<endl;
         return i;
     }
 };
 
 int main(){
     demo a(5);
-    demo *d=a;
-    // demo **s=d;
+
+    demo *d;
+    d=&a;
+
+    demo **s;
+    s=&d;
 
     d->getdata();
-    // s->getdata();
+    s->getdata();
     return 0;
 }
