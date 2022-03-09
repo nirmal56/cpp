@@ -30,7 +30,6 @@ class derived: public base1,public base2{
 	int y,x,z;
 public:
 	derived(int x, int y, int z):base1(x),base2(y){
-
         this->y = y;
         this->x = x;
         this->z = z;
