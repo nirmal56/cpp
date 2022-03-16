@@ -28,9 +28,12 @@ class student{
     void display(){
         fstream f;
         student s;
+        char c;
         f.open("student.dat",ios::in|ios::binary);
-        f.read((char *) &s,sizeof(s));
-        cout<<"roll:"<<s.roll<<"\t"<<"name:"<<s.name<<"\t"<<"marks:"<<s.marks<<endl;
+        while(!f.eof()){
+            f.read((char *) &s,sizeof(s));
+            cout<<"roll:"<<s.roll<<"\t"<<"name:"<<s.name<<"\t"<<"marks:"<<s.marks<<endl;
+        }
         f.close();
     }
 };
@@ -43,6 +46,6 @@ int main(){
         cin>>ch;
     }
     while(ch=='y'|ch=='Y');
-    cout<<"updated"<<endl;
     s.display();
+    cout<<"updated"<<endl;
 }
