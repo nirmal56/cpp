@@ -4,10 +4,10 @@ using namespace std;
 
 class student{
     public:
-    string ID;
-    string student_name;
-    string branch;
-    string location;
+    char ID[50];
+    char student_name[50];
+    char branch[50];
+    char location[50];
 
     void getdata(){
         cout<<"enter ID:"<<endl;
@@ -46,7 +46,8 @@ class student{
         f.open("student.txt", ios::in|ios::binary);
         while(!f.eof()){ //this while loop will print all the object present in the file
             f.read((char *)&stu, sizeof(stu));
-            cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl;
+            if(stu.ID == id)
+                cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl<<endl;
         }
         f.close();
     }
@@ -68,10 +69,10 @@ int main(){
         } while(ch=='y'||ch=='Y');
     } 
     else{
-        // cout<<"enter the ID to find: ";
-        // string id;
-        // cin>>id;
-        s1.display();
+        cout<<"enter the ID to find: ";
+        string id;
+        cin>>id;
+        s1.findFromID(id);
     }
 
     cout<<"updated!!!"<<endl;
