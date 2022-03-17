@@ -47,7 +47,7 @@ class student{
         while(!f.eof()){ //this while loop will print all the object present in the file
             f.read((char *)&stu, sizeof(stu));
             if(stu.ID == id)
-                cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl<<endl;
+                cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<stu.location<<endl<<endl;
         }
         f.close();
     }
@@ -58,24 +58,19 @@ int main(){
     char ch='n';
 
     int op;
-    cout<<"enter 1 to add a data & 2 for display the data: "<<endl;
-    cin>>op;
-
-    if(op==1){
-        do{
-            s1.AddRecord(); //no need to call getdata() because AddRecord() will call getdata()
-            cout<<"want to add more?(y/n)"<<endl;
-            cin>>ch;
-        } while(ch=='y'||ch=='Y');
-    } 
-    else{
-        cout<<"enter the ID to find: ";
-        string id;
-        cin>>id;
-        s1.findFromID(id);
-    }
-
-    cout<<"updated!!!"<<endl;
+    do{
+        cout<<"enter 1 to add a data & 2 for display the data && 3 to exit: "<<endl;
+        cin>>op;
+        if(op==1){
+            s1.AddRecord(); 
+        } 
+        else if(op == 2){
+            cout<<"enter the ID to find: ";
+            string id;
+            cin>>id;
+            s1.findFromID(id);
+        }
+    }while(op!=3);
 
 return 0;
 }
