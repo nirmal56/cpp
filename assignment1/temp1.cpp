@@ -43,12 +43,27 @@ class student{
     void findFromID(string id){
         fstream f;
         student stu;
+        bool flag=true;
         f.open("student.txt", ios::in|ios::binary);
         while(!f.eof()){ //this while loop will print all the object present in the file
             f.read((char *)&stu, sizeof(stu));
-            if(stu.ID == id)
+            if(stu.ID == id){
+                flag = true;
                 cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<stu.location<<endl<<endl;
+            }
+            try{
+                if(stu.ID != id){
+                    throw(-1);
+                }
+            }
+            catch (int a){
+                if(a == -1){
+                    flag = false;
+                }
+            }
         }
+        if(!flag)
+            cout<<"STUDENT DOES NOT EXIST"<<endl;
         f.close();
     }
 };

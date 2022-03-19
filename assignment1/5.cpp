@@ -1,69 +1,70 @@
 #include<iostream>
 #include<fstream>
+
 using namespace std;
 
-class student{
-    public:
-    string id,name,branch,location;
-    fstream fp;
+int main(){
+    string ID;
+    string student_name;
+    string branch;
+    string location;
 
-    student(){
+    string temp;
+    string return_res;
 
-    }
+    int option;
 
-    void getdata(){   
+    fstream file;
+    file.open("sample.txt", ios::app|ios::in);
 
-        fp.open( "file.txt", ios::app | ios::in | ios::out);
-       
-        cout<<"enter ID:";
-        cin>>id;
-        cout<<"enter name:";
-        cin>>name;
-        cout<<"enter branch:";
-        cin>>branch;
-        cout<<"enter location:";
-        cin>>location;
-
-        fp<<id + " " + name + " " + branch + " " + location + '\n';
-    }
-
-    void display(string k){
-        fstream fp;
-        student s;
-        string id;
-        char buf[50];
-
-        fp.open( "file.txt", ios::app | ios::in | ios::out);
-
-        while(!fp.eof()){
-            fp>>id;
-
-            if(k == id){
-                fp.getline(buf,50);
-                cout << k << buf << endl;
+    try{
+        try{
+            if(file){
+                cout<<"opening a file"<<endl;
+            } else{
+                throw 1;
             }
         }
-    }
-};
+        catch(int a){
+            cout<<"Exception: can't open the file"<<endl;
+        }
+        
+        cout<<"enter 1 to add a new student"<<endl<<"enter 2 to find a student with ID"<<endl<<"enter the input: ";
+        cin>>option;
+        if(option==1){
+            cout<<endl<<"enter the ID: ";
+            cin>>ID;
 
-int main(){
-    student s;
-    string id;
-    int choice;
+            cout<<endl<<"enter the student name: ";
+            cin>>student_name;
 
-    cout<<"1 to add data 2 to fetch from id:"<<endl;
-    cout<<"enter your choice:"<<endl;
-    cin>>choice;
+            cout<<endl<<"enter the branch: ";
+            cin>>branch;
 
-    if(choice==1){
-        s.getdata();
-    }
-    
-    else if(choice == 2){
-        cout<<"which id?"<<endl;
-        cin>>id;
-        s.display(id);
-    }
-   
+            cout<<endl<<"enter the location: ";
+            cin>>location;
+
+            string whole_line = ID + " " + student_name + " " + branch + " " + location;
+            cout<<"data added: "<<whole_line<<endl;
+
+            file << whole_line << endl;
+        } else if(option==2){
+            cout<<"enter the ID: ";
+            cin>>ID;
+
+            while(!file.eof()) {
+                file>>temp;
+                if(temp==ID){
+                    getline(file, return_res); //this will copies the content(line by line) of file to a temp variable
+                    cout<<"\nresult-> "<<ID<<return_res<<endl;
+                }
+            }
+        } else{
+            throw 'a';
+        }
+        } catch(char e){
+            cout<<"Exception: please enter either option = 1 or 2"<<endl;
+        }
+        file.close();
     return 0;
 }
