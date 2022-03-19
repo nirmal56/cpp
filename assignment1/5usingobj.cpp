@@ -33,7 +33,7 @@ class student{
             fstream f; 
             student stu;
             f.open("student.txt", ios::in|ios::binary);
-            while(!f.eof()){ //this while loop will print all the object present in the file
+            while(!f.eof()){ 
                 f.read((char *)&stu, sizeof(stu));
                 cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl<<endl;
             }
@@ -44,7 +44,7 @@ class student{
             fstream f; 
             student stu;
             f.open("student.txt", ios::in|ios::binary);
-            while(!f.eof()){ //this while loop will print all the object present in the file
+            while(!f.eof()){ 
                 f.read((char *)&stu, sizeof(stu));
                 if(id==stu.ID){
                     cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<stu.location<<endl<<endl;
@@ -65,24 +65,24 @@ int main(){
         if(op!=1 || op!=2){
             throw 'e';
         } 
-    } catch(char a){
+    } 
+    catch(char a){
         cout<<"Exception: please enter either 1 or 2 as an option"<<endl;
     }
 
     if(op==1){
         do{ 
-            s1.AddRecord(); //no need to call getdata() because AddRecord() will call getdata()
+            s1.AddRecord(); 
             cout<<"want to add more?(y/n)"<<endl;
             cin>>ch;
         } while(ch=='y'||ch=='Y');
-    } else if(op==2){
+    } 
+    else if(op==2){
         cout<<"enter the ID to find: ";
         string id;
         cin>>id;
         s1.findFromID(id);
     }
-
-    cout<<"updated!!!"<<endl;
 
     return 0;
 }
