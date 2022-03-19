@@ -5,7 +5,7 @@ using namespace std;
 class student{
     public:
         char ID[50];
-        char student_name[50];
+        char stu_name[50];
         char branch[50];
         char location[50];
 
@@ -13,7 +13,7 @@ class student{
             cout<<"enter ID:"<<endl;
             cin>>ID;
             cout<<"enter student name"<<endl;
-            cin>>student_name;
+            cin>>stu_name;
             cout<<"enter branch"<<endl;
             cin>>branch; 
             cout<<"enter location"<<endl;
@@ -23,7 +23,7 @@ class student{
         void AddRecord(){
             fstream f;
             student stu;
-            f.open("student.txt", ios::app|ios::binary)cd;
+            f.open("student.txt", ios::app|ios::binary);
             stu.getdata();
             f.write((char*)&stu, sizeof(stu));
             f.close();
@@ -35,19 +35,19 @@ class student{
             f.open("student.txt", ios::in|ios::binary);
             while(!f.eof()){ 
                 f.read((char *)&stu, sizeof(stu));
-                cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl<<endl;
+                cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.stu_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<location<<endl<<endl;
             }
             f.close();
         }
 
-        void findFromID(string id){
+        void findbyID(string id){
             fstream f; 
             student stu;
             f.open("student.txt", ios::in|ios::binary);
             while(!f.eof()){ 
                 f.read((char *)&stu, sizeof(stu));
                 if(id==stu.ID){
-                    cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.student_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<stu.location<<endl<<endl;
+                    cout<<"ID: "<<stu.ID<<endl<<"student name: "<<stu.stu_name<<endl<<"branch: "<<stu.branch<<endl<<"location: "<<stu.location<<endl<<endl;
                 }
             }
             f.close();
@@ -78,10 +78,10 @@ int main(){
         } while(ch=='y'||ch=='Y');
     } 
     else if(op==2){
-        cout<<"enter the ID to find: ";
+        cout<<"enter the ID to find Data: ";
         string id;
         cin>>id;
-        s1.findFromID(id);
+        s1.findbyID(id);
     }
 
     return 0;
