@@ -18,13 +18,6 @@ int main(){
         fp>>c;
         len=c.length();
         
-        // for(int i=0;i<len;i++){
-            // int j=i-1;
-            // cout<<i<<j<<endl;
-            // if(c[i] == 'e' && c[j] == ' '){
-            //     count++;
-            // }
-        // }
         if(c[0] == 'e'){
             count++;
         }

@@ -48,21 +48,23 @@ int main(){
             cout<<"data added: "<<whole_line<<endl;
 
             file << whole_line << endl;
-        } else if(option==2){
+        } 
+        else if(option==2){
             cout<<"enter the ID: ";
             cin>>ID;
 
-            while(!file.eof()) {
-                file>>temp;
+            while(file>>temp) {//to remove the double printing.
                 if(temp==ID){
-                    getline(file, return_res); //this will copies the content(line by line) of file to a temp variable
+                    getline(file, return_res); 
                     cout<<"\nresult-> "<<ID<<return_res<<endl;
                 }
             }
-        } else{
-            throw 'a';
-        }
-        } catch(char e){
+        } 
+            else{
+                throw 'a';
+            }
+        } 
+        catch(char e){
             cout<<"Exception: please enter either option = 1 or 2"<<endl;
         }
         file.close();

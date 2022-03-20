@@ -1,4 +1,4 @@
-/*3.count number of word starting with 'e'*/
+/*3.count number of word ending with 's'*/
 
 #include<iostream>
 #include<fstream>
@@ -19,6 +19,9 @@ int main(){
         fp>>c;
         len=c.length();
         if(c[len-1] == 's'){
+            count++;
+        }
+        else if(c[len-1] == '.' && c[len -2]=='s'){
             count++;
         }
     }
