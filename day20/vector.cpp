@@ -41,4 +41,12 @@ int  main(){
     }
     cout<<endl;
 
+    cout<<"adding insertion:"<<endl;
+    v.insert(v.begin()+3,3,'z');
+     cout<<"modified contents:"<<endl;
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<"\t";
+    }
+    cout<<endl;
+
 }
