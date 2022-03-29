@@ -1,0 +1,3 @@
+/home/nirmal/user/cpp/day25/student/build/CMakeFiles/rebuild_cache.dir
+/home/nirmal/user/cpp/day25/student/build/CMakeFiles/testStudent.dir
+/home/nirmal/user/cpp/day25/student/build/CMakeFiles/edit_cache.dir
