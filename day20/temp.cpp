@@ -11,16 +11,18 @@ int  main(){
 
     p=v.begin();
     i=0;
-    while(p++ != v.end()){
+    while(p != v.end()){
         *p = i + 'a';
         i++;
+        p++;
     }
     cout<<"original contents but backwards:"<<endl;
 
     p=v.begin();
-    while(p++ != v.end()){
+    while(p != v.end()){
         cout<<*p<<"\t";
         i++;
+        p++;
     }
     cout<<endl;
 
@@ -29,17 +31,10 @@ int  main(){
     cout<<"modified contents:After Insertion"<<endl;
 
     p=v.begin();
-    while( p++ != v.end()){
+    while( p != v.end()){
         cout<<*p<<"\t";
+        p++;
     }
     cout<<endl;
 
-    v.erase(v.begin(),v.begin()); 
-
-    p=v.begin();
-    cout<<"modified contents:After erasing"<<endl;
-    while( p++ != v.end()){
-        cout<<*p<<"\t";
-    }
-    cout<<endl;
 }
