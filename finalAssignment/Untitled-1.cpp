@@ -17,7 +17,7 @@ int main(){
     bool flag=true;
 
     int len;
-    char leta='A',letb='B';
+    // char leta='A',letb='B';
     len = x.length();
     if(x[0] == 'A'){
         for (int i=0;i<len;i+=2){

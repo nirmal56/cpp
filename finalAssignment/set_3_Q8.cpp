@@ -20,7 +20,7 @@ int main(){
     char leta='A',letb='B';
     len = x.length();
     if(x[0] == 'A'){
-        for (int i=0;i<len/2;i+=2){
+        for (int i=0;i<len;i+=2){
             if(x[i] == 'A' && (x[i+1]=='B')){
                 flag = true;
             }
@@ -30,7 +30,7 @@ int main(){
         }
     }
     if(x[0] == 'B'){
-        for (int i=0;i<len/2;i+=2){
+        for (int i=0;i<len;i+=2){
             if(x[i] == 'B' && (x[i+1]=='A')){
                 flag = true;
             }
