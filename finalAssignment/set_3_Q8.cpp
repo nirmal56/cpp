@@ -12,34 +12,35 @@ using namespace std;
 
 int main(){
     string x;
-    cout<<"Enter log:"<<endl;
+
+    cout<<"Enter log string:"<<endl;
     cin>>x;
-    bool flag;
+    bool ans;
 
     int len;
     char leta='A',letb='B';
     len = x.length();
-    if(x[0] == 'A'){
+    if(x[0] == leta){
         for (int i=0;i<len;i+=2){
-            if(x[i] == 'A' && (x[i+1]=='B')){
-                flag = true;
+            if((x[i] == leta) && (x[i+1] == letb)){
+                ans = true;
             }
             else{
-                flag =false;
+                ans = false;
             }
         }
     }
-    if(x[0] == 'B'){
+    if(x[0] == letb){
         for (int i=0;i<len;i+=2){
-            if(x[i] == 'B' && (x[i+1]=='A')){
-                flag = true;
+            if((x[i] == letb) && (x[i+1] == leta)){
+                ans = true;
             }
             else{
-                flag =false;
+                ans = false;
             }
         }
     }
-    if(flag)
+    if(ans)
         cout<<"YES"<<endl;
     else
         cout<<"NO"<<endl;
