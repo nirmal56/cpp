@@ -11,17 +11,8 @@ Ex: Given 0111, then S1 should be: 1101, and S2: 0111, the smallest LCS will be 
 #include <iostream>
 using namespace std;
 int j = 0, r = 0;
-int arrstore[] = {};
-string arr[] = {};
-
-void smallestValue(int arr[], int N){
-    int min = arr[0];
-    for (int i = 1; i < N; i++)    {
-        if (arr[i] < min)
-            min = arr[i];
-    }
-    cout << "The smallest LCS is: " << min <<endl;
-}
+int listOfRotation[] = {};
+string myarray[] = {};
 
 bool chkforswap(char str[], int beg, int curr){
     for (int i = beg; i < curr; i++)
@@ -29,9 +20,19 @@ bool chkforswap(char str[], int beg, int curr){
             return 0;
     return 1;
 }
+
+void smallestValue(int myarray[], int N){
+    int min = myarray[0];
+    for (int i = 1; i < N; i++)    {
+        if (myarray[i] < min)
+            min = myarray[i];
+    }
+    cout << "The smallest LCS is: " << min <<endl;
+}
+
 void rotatingString(char str[], int ind, int len){
     if (ind >= len){
-        arr[j] = str;
+        myarray[j] = str;
         j++;
         return;
     }
@@ -63,7 +64,7 @@ int LCS(string X, string Y, int m, int n){
                 LCSuff[i][j] = 0;
         }
     }
-    arrstore[r] = result;
+    listOfRotation[r] = result;
     r++;
     return result;
 }
@@ -71,21 +72,20 @@ int LCS(string X, string Y, int m, int n){
 int main(){
     char string[20];
     int len;
-    cout << "\nEnter string : ";
+    cout << "Enter string : ";
     cin >> string;
 
     len = strlen(string);
     rotatingString(string, 0, len);
-    if (j == 2){
-        cout << "\nThe result is 0"<<endl;
-    }
+    if (j == 2)
+        cout << "The smallest LCS is: 0" <<endl;
     else{
         for (int i = 0; i < j; i++){
             for (int k = i + 1; k < j; k++){
-                LCS(arr[i], arr[k], len, len);
+                LCS(myarray[i], myarray[k], len, len);
             }
         }
     }
-    smallestValue(arrstore, r);
+    smallestValue(listOfRotation, r);
     return 0;
 }
