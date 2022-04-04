@@ -23,8 +23,8 @@ void smallestValue(int arr[], int N){
     cout << "The smallest LCS is: " << min <<endl;
 }
 
-bool swapp(char str[], int start, int curr){
-    for (int i = start; i < curr; i++)
+bool chkforswap(char str[], int beg, int curr){
+    for (int i = beg; i < curr; i++)
         if (str[i] == str[curr])
             return 0;
     return 1;
@@ -36,7 +36,7 @@ void rotatingString(char str[], int ind, int len){
         return;
     }
     for (int i = ind; i < len; i++){
-        bool check = swapp(str, ind, i);
+        bool check = chkforswap(str, ind, i);
         if (check){
             swap(str[ind], str[i]);
             rotatingString(str, ind + 1, len);
@@ -45,7 +45,7 @@ void rotatingString(char str[], int ind, int len){
     }
 }
 
-int LCSubStr(string X, string Y, int m, int n){
+int LCS(string X, string Y, int m, int n){
 
     int LCSuff[m + 1][n + 1];
     int result = 0; 
@@ -82,7 +82,7 @@ int main(){
     else{
         for (int i = 0; i < j; i++){
             for (int k = i + 1; k < j; k++){
-                LCSubStr(arr[i], arr[k], len, len);
+                LCS(arr[i], arr[k], len, len);
             }
         }
     }
